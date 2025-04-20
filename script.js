@@ -54,24 +54,120 @@ let contacts = [
       time: "4 days..",
       img: "https://images.unsplash.com/photo-1711993429167-fb04f40eaf3b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjc2fHxjdXRlJTIwbW9kZWxzfGVufDB8fDB8fHww"
     },
-  ];
-  let container = document.getElementById("contact-list-container");
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
+    {
+      name:"",
+      lastMessage:"",
+      time:"",
+      img:""
+    },
 
-  contacts.forEach(contact => {
-    let card = document.createElement("div");
-    card.classList.add("contact-card");
+  ];
   
-    card.innerHTML = `
-      <img src="${contact.img}" alt="${contact.name}" class="contact-img">
-      <div class="contact-info">
-        <div class="contact-top">
-          <span class="contact-name">${contact.name}</span>
-          <span class="contact-time">${contact.time}</span>
-        </div>
-        <div class="contact-msg">${contact.lastMessage}</div>
+let chats = document.getElementById("contact-list-container");
+let openChat = document.getElementById("open-chat"); 
+
+contacts.forEach((contact, index) => {
+  let card = document.createElement("div");
+  card.classList.add("contact-card");
+  card.setAttribute("data-id", index);
+
+  card.innerHTML = `
+    <img src="${contact.img}" alt="${contact.name}" class="contact-img">
+    <div class="contact-info">
+      <div class="contact-top">
+        <span class="contact-name">${contact.name}</span>
+        <span class="contact-time">${contact.time}</span>
       </div>
-    `;
-  
-    container.appendChild(card);
-  });
-    
+      <div class="contact-msg">${contact.lastMessage}</div>
+    </div>
+  `;
+
+  chats.appendChild(card);
+});
+
+
+chats.addEventListener("click", function (e) {
+  const card = e.target.closest(".contact-card");
+  if (!card) return;
+
+  const id = card.getAttribute("data-id");
+  const contact = contacts[id];
+
+  openChat.style.display = "block";
+  openChat.style.backgroundImage = `url("./1ce6731a10fb3863fa423b3615b58cdb.jpg")`;
+  openChat.innerHTML = `
+    <div class="show-chat">
+      <div class="user-info">
+        <div class="left">
+          <h4 class="close-chat"><i class="ri-arrow-left-line"></i></h4>
+          <img src="${contact.img}" alt="${contact.img}">
+          <h4 id="user-name">${contact.name}</h4>
+        </div>
+        <div class="right">
+          <h4><i class="ri-video-line"></i></h4>
+          <h4><i class="ri-phone-line"></i></h4>
+          <h4><i class="ri-more-2-fill"></i></h4>
+        </div>
+      </div>
+      <div class="chat-box">
+        <p>${contact.lastMessage}</p>
+      </div>
+      <div class="message-area">
+        <div class="left">
+          <h4><i class="ri-emoji-sticker-line"></i></h4>
+          <input type="text" placeholder="Message">
+          <h4><i class="ri-attachment-line"></i></h4>
+          <h4><i class="ri-money-rupee-circle-line"></i></h4>
+          <h4><i class="ri-camera-line"></i></h4>
+        </div>
+        <div class="right">
+          <h4><i class="ri-mic-line"></i></h4>
+        </div>
+      </div>
+    </div>
+  `;
+});
+
+

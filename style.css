@@ -12,20 +12,7 @@ body{
 }
 #main{
     display: flex;
-    justify-content: space-between;
-}
-#main #right{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    margin-right: 50%;
-    border-left: 1px solid #ccc;
-    
-}
-#main #right img{
-    display: flex;
-    margin-top: 50%;
-    margin-left: 200%;
+    border-left:2px solid #ccc ;
 }
 #nav{
     width: 100%;
@@ -47,13 +34,19 @@ body{
     gap: 10px;
     font-size: 20px;
 }
+.contact-list-container{
+    overflow-y: hidden;
+    height: 100%;
+}
 .contact-card {
     display: flex;
     gap: 10px;
     padding: 10px;
     border-bottom: 1px solid #ccc;
+    border-right:1px solid #ccc;
     cursor: pointer;
     width: 400px;
+    /* overflow-y: auto; */
   }
   
   .contact-img {
@@ -80,4 +73,133 @@ body{
   .contact-msg {
     color: #555;
   }
-  
+
+
+  #open-chat {
+    height: 500px;
+    width: 73%;
+    height: 90%;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    display: none;
+    overflow: hidden;
+    margin-left: 25%;
+  }
+  #open-chat .show-chat {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  #open-chat .show-chat .user-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.6rem;
+    align-items: center;
+    background-color: #fff;
+    justify-content: space-between;
+  }
+  #open-chat .show-chat .user-info .left {
+    display: flex;
+    align-items: center;
+  }
+  #open-chat .show-chat .user-info .left h4 {
+    cursor: pointer;
+  }
+  #open-chat .show-chat .user-info .left img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    margin-right: 0.5rem;
+  }
+  #open-chat .show-chat .user-info .left #user-name {
+    font-size: 0.85rem;
+    font-weight: 400;
+    font-family: sans-serif;
+    color: #000;
+  }
+  #open-chat .show-chat .user-info .right {
+    display: flex;
+    gap: 0.5rem;
+  }
+  #open-chat .show-chat .user-info .right h4 {
+    font-size: 1.2rem;
+    font-weight: 100;
+    font-family: sans-serif;
+    color: #000;
+    cursor: pointer;
+  }
+  #open-chat .show-chat .chat-box p {
+    background-color: #fff;
+    color: #000;
+    align-self: flex-start;
+    margin-top: 0.5rem;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    border-radius: 20px;
+    border-top-left-radius: 0;
+    border-bottom-right-radius: 1rem;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  #open-chat .show-chat .message-area {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    margin: 0.5rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+  }
+  #open-chat .show-chat .message-area .left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #fff;
+    padding: 0.5rem;
+    border-radius: 20px;
+    color: #000;
+    width: 86%;
+  }
+  #open-chat .show-chat .message-area .left h4 {
+    font-size: 1.2rem;
+    color: #000;
+    font-family: sans-serif;
+    font-weight: 100;
+    cursor: pointer;
+  }
+  #open-chat .show-chat .message-area .left input {
+    width: 90%;
+    height: 100%;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    font-size: 0.8rem;
+    font-family: sans-serif;
+  }
+  #open-chat .show-chat .message-area .right {
+    display: flex;
+    align-items: center;
+    width: 14%;
+    justify-content: center;
+  }
+  #open-chat .show-chat .message-area .right h4 {
+    font-size: 0.9rem;
+    font-family: sans-serif;
+    color: #fff;
+    background-color: #3cbf6e;
+    padding: 0.6rem 0.7rem;
+    border-radius: 50%;
+    font-weight: 100;
+    cursor: pointer;
+  }
+ 
