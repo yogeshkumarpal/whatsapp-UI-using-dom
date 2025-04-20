@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    padding: 20px;
+}
+#main{
+    display: flex;
+    justify-content: space-between;
+}
+#main #right{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 50%;
+    border-left: 1px solid #ccc;
+    
+}
+#main #right img{
+    display: flex;
+    margin-top: 50%;
+    margin-left: 200%;
+}
+#nav{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+#nav .left{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+#nav .right{
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+}
+.contact-card {
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    width: 400px;
+  }
+  
+  .contact-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+
+  }
+  
+  .contact-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .contact-top {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+  }
+  
+  .contact-msg {
+    color: #555;
+  }
+  
